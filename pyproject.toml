@@ -1,0 +1,67 @@
+[project]
+name = "borica-qes"
+version = "0.1.0"
+description = "Python wrapper for BORICA B-Trust CQES Signing API (QES + optional Remote Identification)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "radochobanov", email = "rado.chobanov97@gmail.com" }]
+keywords = ["borica", "qes", "qualified electronic signature", "e-signature", "xades", "pades"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Security :: Cryptography",
+  "Typing :: Typed",
+]
+dependencies = [
+  "httpx>=0.27.0",
+  "pydantic>=2.7.0",
+  "typing-extensions>=4.9.0",
+]
+
+[project.optional-dependencies]
+ident = []
+dev = [
+  "pytest>=8.1",
+  "pytest-cov>=5.0",
+  "ruff>=0.5.0",
+  "black>=24.4.0",
+  "pyright>=1.1.380",
+  "mkdocs>=1.6.0",
+  "mkdocs-material>=9.5.0",
+  "mkdocstrings[python]>=0.25.0",
+  "types-requests",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-org/borica-qes"
+Repository = "https://github.com/your-org/borica-qes"
+Issues = "https://github.com/your-org/borica-qes/issues"
+Documentation = "https://your-org.github.io/borica-qes"
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = ["E", "F", "I", "UP", "B", "SIM", "PL", "N"]
+ignore = ["E501"]
+src = ["borica_qes", "tests"]
+
+[tool.pyright]
+typeCheckingMode = "strict"
+reportUnusedImport = "warning"
+
+[tool.pytest.ini_options]
+addopts = "-q --cov=borica_qes --cov-report=term-missing"
+
+[build-system]
+requires = ["setuptools>=67", "wheel"]
+build-backend = "setuptools.build_meta"
