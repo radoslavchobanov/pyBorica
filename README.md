@@ -2,7 +2,7 @@
 
 # borica-qes
 
-Python wrapper for **BORICA B‑Trust Cloud Qualified Electronic Signature (CQES)** API.
+pyborica is a python wrapper for **BORICA B‑Trust Cloud Qualified Electronic Signature (CQES)** API.
 
 This library hides the complexities of the BORICA Signing API — mutual TLS, mandatory headers, identity modes — and exposes a clean, typed interface for Python developers. It supports both synchronous and asynchronous usage, and optionally includes the Remote Identification + OTC signing flow.
 
