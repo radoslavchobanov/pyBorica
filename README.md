@@ -1,3 +1,5 @@
+# pyborica
+
 # borica-qes
 
 Python wrapper for **BORICA B‑Trust Cloud Qualified Electronic Signature (CQES)** API.
